@@ -7,6 +7,11 @@ h1{
 	color: rgba(0, 100, 200, 0.7);
 }
 
+.highlight{
+	font-family: "Arial Black", Verdana, "Trebuchet MS";
+	color: rgba(4, 15, 170, 0.7);
+}
+
 #my_photo, .mood{
 	width: 80px;
 	height: 80px;
