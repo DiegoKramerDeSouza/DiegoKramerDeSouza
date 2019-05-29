@@ -2,6 +2,7 @@ body{
 	background-image: url("http://mumstudents.org/cs472/2019-06-RS/Labs/2/background.gif");
 	background-repeat: repeat;
 }
+
 .background{
 	position: absolute;
 	top: 0px;
@@ -10,23 +11,41 @@ body{
 
 .container{
 	border: 10px solid white;
+	border-radius: 5px;
 	background-color: white;
 	margin: 10px 10%;
+	box-shadow: 0px 2px 2px rgba(20, 20, 20, 0.5);
 }
+
 nav{
 	background-color: #A8F0F0;
 	text-align: right;
+	padding: 5px;
 }
+
 nav>h2{
 	font-size: 14pt;
 }
-aside>div{
+
+aside{
 	float: left;
-	background-color: #A8F0F0;
-	border-radius: 15px;
-	width:200px;
+	overflow: auto;
+	width: 25%;
 }
+
+aside>div{
+	background-color: #A8F0F0;
+	border: 5px solid rgb(0, 144, 151);
+	border-radius: 15px;
+	padding: 5px;
+	margin: 10px;
+}
+
 section{
+	margin-left: 25%;
+}
+
+article{
 	border: 4px solid #C2E9E9;
 	border-radius: 15px;
 	background-color: #E8FBFB;
@@ -35,12 +54,25 @@ section{
 	overflow: auto;
 	text-align: justify;
 }
-section>header>h2>span{
+
+article>header>h2>span{
 	border-bottom: 2px dashed blue;
 }
+
 p>img{
 	float: right;
+	border-radius: 15px;
+	-webkit-transition-duration: 0.4s; 
+	transition-duration: 0.4s;
 }
+
+p>img:hover{
+	box-shadow: 2px 2px 4px rgba(20, 20, 20, 0.5);
+	position: relative;
+	transform: scale(1.02);
+	z-index: 2;
+}
+
 footer{
 	margin: auto 10%;
 }
@@ -54,10 +86,13 @@ footer{
 a {
 	color: #245F5F;
 	text-decoration: none;
+	-webkit-transition-duration: 0.4s; 
+	transition-duration: 0.4s;
 }
 
 a:hover {
 	text-decoration: underline;
+	font-size: 17px;
 }
 
 blockquote {
@@ -79,7 +114,7 @@ h1, h2 {
 
 img {
 	border-style: none;
-	padding: 5px;
+	margin: 5px;
 }
 
 ul {
