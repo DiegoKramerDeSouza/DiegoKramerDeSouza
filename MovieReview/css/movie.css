@@ -94,21 +94,21 @@ aside dd ul{
     vertical-align: top;
 }
 
-article>header>p{
+article>p{
     overflow: auto;
 }
-article>header>p:first-child{
+article>p:first-child{
     font-weight: bold;
     background-color: #E8DC9B;
     border: 2px solid grey;
     border-radius: 10px;
     padding: 8px;
 }
-article>header>p:first-child img{
+article>p:first-child img{
     float: left;
     margin: 5px;
 }
-article>header>p>span{
+article>p>span{
     font-style: italic;
 }
 
