@@ -71,7 +71,7 @@ aside dd ul{
 #details>section{
     max-width: 550px;
 }
-#details>section header{
+#details>section>header{
     width: 100%;
     background-image: url("../images/rbg.png");
     background-repeat: repeat-x;
@@ -94,21 +94,21 @@ aside dd ul{
     vertical-align: top;
 }
 
-article>p{
+article>header>p{
     overflow: auto;
 }
-article>p:first-child{
+article>header>p:first-child{
     font-weight: bold;
     background-color: #E8DC9B;
     border: 2px solid grey;
     border-radius: 10px;
     padding: 8px;
 }
-article>p:first-child img{
+article>header>p:first-child img{
     float: left;
     margin: 5px;
 }
-article>p>span{
+article>header>p>span{
     font-style: italic;
 }
 
