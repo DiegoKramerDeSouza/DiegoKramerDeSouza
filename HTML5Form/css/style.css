@@ -1,0 +1,32 @@
+
+.block>select{
+    width: 100%;
+}
+.block>input{
+    width: 100%;
+}
+
+.blocks3 .block, .block img{
+    display: inline-block;
+    width: 30%;
+    margin: auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.block img{
+    width: 80%;
+    vertical-align: middle;
+}
+
+
+.blocks2>.block{
+    display: inline-block;
+    width: 45%;
+    margin: auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.blocks1>.block{
+    width: 100%;
+}
