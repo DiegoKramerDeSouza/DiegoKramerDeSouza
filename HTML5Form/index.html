@@ -12,13 +12,15 @@
                     <legend>
                         Important Disclosures
                     </legend>
-                    <p>
-                        Before you submit your application, please read through these Important Disclosures, 
-                        which contain additional information about eligibility, rates, and fees, as applicable.
-                    </p>
-                    <textarea readonly cols="80" rows="10">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut lectus ac arcu maximus accumsan. Mauris rhoncus, enim id efficitur vehicula, nunc ligula aliquet metus, nec cursus augue nulla vel nisl. Suspendisse varius erat sed enim fermentum, vitae hendrerit urna euismod. Aenean vulputate gravida lacus in laoreet. In nec nibh vel ipsum gravida pulvinar sed vel velit. Sed rhoncus, metus eu auctor vulputate, arcu nunc euismod nisi, in interdum lorem diam id augue. Sed dui diam, dignissim eu elit non, consequat porttitor magna. Pellentesque eu libero pharetra, finibus sem sit amet, semper orci. Duis eget maximus augue. Suspendisse leo ante, feugiat vel tortor elementum, venenatis eleifend ligula. Ut et nunc a diam interdum condimentum. Cras at purus purus. Nullam id est et libero pellentesque tempus nec at enim. Mauris nulla orci, porta et velit quis, accumsan sagittis leo. Vestibulum efficitur pharetra est, nec convallis neque finibus sed. Donec sed nibh ipsum.
-                        Vestibulum auctor vulputate massa ut tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla vulputate quis felis id lobortis. Morbi vitae cursus mauris. Sed posuere mauris sed elit faucibus, sollicitudin tincidunt quam congue. Ut a sagittis lacus, et pretium libero. Aenean blandit lacus ac sem vehicula, a sagittis est porttitor. Maecenas interdum, massa non iaculis rutrum, leo risus interdum nibh, vel tincidunt sapien elit auctor ante. Mauris cursus, purus ornare gravida tristique, lectus nisl faucibus lacus, quis elementum ipsum magna eu ex. Maecenas sem enim, placerat a semper a, tincidunt ac ante. Nunc eros metus, ultricies ac quam non, rhoncus dignissim odio. Morbi ac pretium ex, ac suscipit mi. Quisque luctus nisi quis magna posuere accumsan. Quisque nec felis vitae orci semper tincidunt non sed dui. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                    </textarea>
+                    <div class="center">
+                        <p>
+                            Before you submit your application, please read through these Important Disclosures, 
+                            which contain additional information about eligibility, rates, and fees, as applicable.
+                        </p>
+                        <textarea readonly cols="80" rows="10">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut lectus ac arcu maximus accumsan. Mauris rhoncus, enim id efficitur vehicula, nunc ligula aliquet metus, nec cursus augue nulla vel nisl. Suspendisse varius erat sed enim fermentum, vitae hendrerit urna euismod. Aenean vulputate gravida lacus in laoreet. In nec nibh vel ipsum gravida pulvinar sed vel velit. Sed rhoncus, metus eu auctor vulputate, arcu nunc euismod nisi, in interdum lorem diam id augue. Sed dui diam, dignissim eu elit non, consequat porttitor magna. Pellentesque eu libero pharetra, finibus sem sit amet, semper orci. Duis eget maximus augue. Suspendisse leo ante, feugiat vel tortor elementum, venenatis eleifend ligula. Ut et nunc a diam interdum condimentum. Cras at purus purus. Nullam id est et libero pellentesque tempus nec at enim. Mauris nulla orci, porta et velit quis, accumsan sagittis leo. Vestibulum efficitur pharetra est, nec convallis neque finibus sed. Donec sed nibh ipsum.
+                            Vestibulum auctor vulputate massa ut tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla vulputate quis felis id lobortis. Morbi vitae cursus mauris. Sed posuere mauris sed elit faucibus, sollicitudin tincidunt quam congue. Ut a sagittis lacus, et pretium libero. Aenean blandit lacus ac sem vehicula, a sagittis est porttitor. Maecenas interdum, massa non iaculis rutrum, leo risus interdum nibh, vel tincidunt sapien elit auctor ante. Mauris cursus, purus ornare gravida tristique, lectus nisl faucibus lacus, quis elementum ipsum magna eu ex. Maecenas sem enim, placerat a semper a, tincidunt ac ante. Nunc eros metus, ultricies ac quam non, rhoncus dignissim odio. Morbi ac pretium ex, ac suscipit mi. Quisque luctus nisi quis magna posuere accumsan. Quisque nec felis vitae orci semper tincidunt non sed dui. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                        </textarea>
+                    </div>
                 </fieldset>
                 <fieldset>
                     <legend>
@@ -76,7 +78,7 @@
                             <input type="text" name="address" required />
                             <label for="email">Email Address</label>
                             <input type="email" name="email" required
-                                pattern="^\w+(\.|\_|\-|\w)*\@\w+\.\w{2,}(\.\w{2,3})?$"
+                                pattern="^\w+(.|_|-)*\w+@\w+.(\w{2,}){1}$"
                                 title="Email address xxxx@xxx.xxx"
                                 />
                         </div>
@@ -84,9 +86,10 @@
                             <label for="num">Suite/Apt. # (if Applicable)</label>
                             <input type="text" name="num" />
                             <label for="phone">Primary Phone Number</label>
-                            <input type="tel" name="phone" placeholder="(___)___-____" required
-                                pattern="^\(\d{3}\)\d{3}\-\d{4}$"
-                                title="Telephone number (555)555-5555"
+                            <input type="tel" placeholder="___-___-____" name="phone" 
+                                pattern="^\(\d{3}\)\d{3}-\d{4}$" 
+                                title="Valid number (555)555-5555"
+                                required
                                 /> 
                         </div>
                     </div>
