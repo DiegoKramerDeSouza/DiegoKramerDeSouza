@@ -1,5 +1,12 @@
-'use strict';
 (function(){
+    'use strict';
+    const panel = document.querySelector('#panel');
+    const start = document.querySelector('#start');
+    const stop = document.querySelector('#stop');
+    const animation = document.querySelector('#animation');
+    const turbo = document.querySelector('#turbo');
+    const size = document.querySelector('#size');
+    const limiter = '=====\n'
     let frames = 250;
     let interval;
     let anime;
@@ -9,51 +16,51 @@
     const startAnimation = () => {
         if(!started){
             started = true;
-            anime = document.querySelector('#panel').value.split('=====\n');
+            anime = panel.value.split(limiter);
         }
         interval = setInterval(() => {
-            document.querySelector('#panel').value = anime[num];
+            panel.value = anime[num];
             num == anime.length - 1 ? num = 0 : num++;
         }, frames);
     };
     const stopAnimation = () => {
         clearInterval(interval);
-        document.querySelector('#start').disabled = false;
-        document.querySelector('#stop').disabled = true;
+        start.disabled = false;
+        stop.disabled = true;
         started = false;
-        document.querySelector('#panel').value = ANIMATIONS[document.querySelector('#animation').value];
+        panel.value = ANIMATIONS[animation.value];
     }
     const blankMsg = () => 'Please select an Animation!';
 
-    document.querySelector('#panel').innerHTML = ANIMATIONS[document.querySelector('#animation').value];
+    panel.innerHTML = ANIMATIONS[animation.value];
 
-    document.querySelector('#start').onclick = () => {
-        if(document.querySelector('#animation').value == 'blank') {
-            document.querySelector('#panel').innerHTML = blankMsg();
+    start.onclick = () => {
+        if(animation.value == 'blank') {
+            panel.innerHTML = blankMsg();
             return;
         }
-        document.querySelector('#start').disabled = true;
-        document.querySelector('#stop').disabled = false;
+        start.disabled = true;
+        stop.disabled = false;
         startAnimation();
     }
-    document.querySelector('#stop').onclick = () => {
+    stop.onclick = () => {
         stopAnimation();
     }
-    document.querySelector('#animation').onchange = function() {
+    animation.onchange = function() {
         num = 0;
         if(this.value == 'custom') stopAnimation();
-        document.querySelector('#panel').value = ANIMATIONS[document.querySelector('#animation').value];
+        panel.value = ANIMATIONS[animation.value];
         if(started){
-            anime = document.querySelector('#panel').value.split('=====\n');
+            anime = panel.value.split(limiter);
         }
     }
-    document.querySelector('#turbo').onchange = () => {
-        frames = document.querySelector('#turbo').checked ? 50 : 250;
+    turbo.onchange = () => {
+        frames = turbo.checked ? 50 : 250;
         if(started && interval){
             clearInterval(interval);
             startAnimation();
         }
     }
-    document.querySelector('#size').onchange = () => 
-        document.querySelector('#panel').className = document.querySelector('#size').value;
+    size.onchange = () => 
+        panel.className = size.value;
 })();
