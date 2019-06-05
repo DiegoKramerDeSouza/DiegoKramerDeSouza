@@ -34,31 +34,29 @@ fieldset{
     width: 100%;
 }
 
-.blocks3 .block, .block img{
-    float:left;
-    width: 30%;
-    margin: auto;
-    padding: 10px;
-    box-sizing: border-box;
-    overflow: auto;
+.blocks1 .block{
+    width: 100%;
 }
+.blocks2 .block{
+    width: 45%;
+}
+.blocks3 .block{
+    width: 30%;
+}
+
 .block img{
     width: 80%;
     vertical-align: middle;
     text-align: center;
 }
 
-
-.blocks2>.block{
+.block{
     display: inline-block;
-    width: 45%;
+    vertical-align: top;
     margin: auto;
     padding: 10px;
     box-sizing: border-box;
-}
-
-.blocks1>.block{
-    width: 100%;
+    overflow: auto;
 }
 
 input, select{
