@@ -26,10 +26,10 @@
             accounts.push(acc);
             list();
         };
-        const create = function(name, balance){
+        const create = function(account, deposit){
             return {
-                        name: name.value,
-                        balance: parseFloat(balance.value).toFixed(2)
+                        name: account,
+                        balance: parseFloat(deposit).toFixed(2)
                     };            
         };
         const start = function(){
