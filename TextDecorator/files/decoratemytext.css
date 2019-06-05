@@ -43,3 +43,13 @@ textarea {
 	background-image: url("http://www.cs.washington.edu/education/courses/190m/CurrentQtr/labs/6/hundred-dollar-bill.jpg");
 	background-repeat: repeat;
 }
+
+footer{
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+	opacity: 0.8;
+}
+footer a{
+	display: block;
+}

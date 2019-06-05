@@ -91,3 +91,12 @@ input[type="submit"]{
     text-align: center;
     margin: auto;
 }
+footer{
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+	opacity: 0.8;
+}
+footer a{
+	display: block;
+}

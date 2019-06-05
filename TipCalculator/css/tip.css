@@ -10,3 +10,12 @@ body, input, button {
 div {
     margin: 0.5em;
 }
+footer{
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+	opacity: 0.8;
+}
+footer a{
+	display: block;
+}
