@@ -13,6 +13,9 @@
             deposit.value = '';
             result.value = '';
         };
+        const printError = function(){
+            result.value = 'Please enter a valid account name and deposit value.';
+        }
         const list = function(){
             clear();
             for(let acc of accounts){
@@ -23,14 +26,17 @@
             accounts.push(acc);
             list();
         };
-        const create = function(){
+        const create = function(name, balance){
             return {
                         name: name.value,
-                        balance: parseFloat(deposit.value).toFixed(2)
+                        balance: parseFloat(balance.value).toFixed(2)
                     };            
         };
         const start = function(){
-            push(create());
+            let n = name.value;
+            let b = deposit.value;
+            if(n && b) push(create(n, b));
+            else printError();
         };
 
         return {
