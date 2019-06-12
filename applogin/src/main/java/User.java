@@ -1,17 +1,16 @@
-import java.sql.Timestamp;
+
+import java.util.Objects;
 
 public class User {
 
     private String name;
     private String password;
-    private Timestamp ts;
-    private final Long key;
+    private final int key;
 
     User(String name, String password){
         this.name = name;
         this.password = password;
-        this.ts = new Timestamp(System.currentTimeMillis());
-        this.key = ts.getTime();
+        this.key = this.hashCode();
     }
 
     public String getName() {
@@ -30,7 +29,21 @@ public class User {
         this.password = password;
     }
 
-    public Long getKey() {
+    public int getKey() {
         return key;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(name, user.name) &&
+                Objects.equals(password, user.password);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, password);
     }
 }

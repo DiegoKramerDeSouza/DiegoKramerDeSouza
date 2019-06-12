@@ -1,15 +1,17 @@
-import java.sql.Timestamp;
-import java.util.Map;
+
+import java.util.HashMap;
 
 public class UserList {
 
-    private Map<Long, User> list;
+    private HashMap<Integer, User> list = new HashMap<Integer, User>();
 
     public void addUser(User user){
         this.list.put(user.getKey(), user);
     }
 
-    public Map<Long, User> getList() {
+    public HashMap<Integer, User> getList() {
         return list;
     }
+
+
 }

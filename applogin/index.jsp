@@ -12,7 +12,7 @@
   </head>
   <body>
     <h2>Login</h2>
-    <form method="post" action="cstechsupport">
+    <form method="post" action="login">
       <label>Username: </label><br />
       <input type="text" name="username" /><br />
       <label>Password: </label><br />
