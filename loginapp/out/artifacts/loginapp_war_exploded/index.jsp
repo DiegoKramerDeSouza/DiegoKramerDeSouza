@@ -14,10 +14,10 @@
 <h2>Login</h2>
 <form method="post" action="login">
   <label>Username: </label><br />
-  <input type="text" name="username" /><br />
+  <input type="text" name="username" value="${cookie.user.value}" /><br />
   <label>Password: </label><br />
   <input type="password" name="pwd" /><br />
-  <label><input type="checkbox" name="remember"> Remember me</label>
+  <label><input type="checkbox" name="remember" ${cookie.user.value != null ? "checked" : null}> Remember me</label>
   <br />
   <br />
   <input type="submit" value="Login" />

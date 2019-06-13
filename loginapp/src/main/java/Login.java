@@ -10,7 +10,6 @@ import java.util.Objects;
 @WebServlet("/login")
 public class Login extends HttpServlet {
 
-    private Integer key;
     private UserList list = new UserList();
 
     @Override
@@ -25,36 +24,40 @@ public class Login extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        //HttpSession session = request.getSession(); //creates new session if none exists
-        //session.isNew(); //checks whether is a new session
-        //request.getSession(false); //returns null if none exists
-
-        //session.setMaxInactiveInterval(20*60); //seconds
-        //session.invalidate(); //immediate
-
-        HttpSession session;
-        if(req.getSession(false) != null){
-            //for (Cookie cookie : request.getCookies()) {
-            //if (cookie.getName().equals("Name")) {
-            //String userName = cookie.getValue();
-            //}
-            //}
-
-        }
-
         String user = req.getParameter("username");
         String pass = req.getParameter("pwd");
-        key = Objects.hash(user, pass);
-        if(list.getList().containsKey(key)){
-            if(req.getSession(false) == null){
-                session = req.getSession();
-                session.setMaxInactiveInterval(5*60);
-                session.setAttribute("user", user);
-                //response.sendRedirect("http://www.cs.mum.edu");// to external link
-                //response.sendRedirect("result.jsp"); // within same application
+        String remember = req.getParameter("remember");
+        if(list.validate(user, pass)){
+            HttpSession session = req.getSession();
+            session.setMaxInactiveInterval(5 * 60);
+            session.setAttribute("user", user);
+            if(remember == null){
+                removeCookie(req.getCookies(), resp);
+            } else {
+                setCookie("user", user, resp);
+            }
+            setCookie("promo", "$100", resp);
+            resp.sendRedirect("/welcome");
+            return;
+        }
+        resp.sendRedirect("/");
+
+    }
+
+    private void setCookie(String name, String value, HttpServletResponse resp){
+        int lifetime = 30 * 24 * 60 * 60;
+        Cookie cookie = new Cookie(name, value);
+        cookie.setMaxAge(lifetime);
+        resp.addCookie(cookie);
+    }
+
+    private void removeCookie(Cookie[] cookies, HttpServletResponse resp){
+        for(Cookie ck: cookies){
+            if(ck.getName().equals("user")){
+                ck.setMaxAge(0);
+                resp.addCookie(ck);
+                return;
             }
         }
-        RequestDispatcher disp = req.getRequestDispatcher("index.jsp");
-        disp.forward(req, resp);
     }
 }
