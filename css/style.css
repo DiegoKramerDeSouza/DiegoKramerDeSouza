@@ -7,6 +7,10 @@ h1, div>span{
 	color: rgba(0, 100, 200, 0.7);
 }
 
+div>span{
+	font-size: 18pt;
+}
+
 .highlight{
 	font-family: "Arial Black", Verdana, "Trebuchet MS";
 	color: rgba(4, 15, 170, 0.7);
