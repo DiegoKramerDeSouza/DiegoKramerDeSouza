@@ -2,7 +2,7 @@ body{
 	background-color: rgba(20,20,20,0.1);
 }
 
-h1{
+h1, div>span{
 	font-family: "Arial Black", Verdana, "Trebuchet MS";
 	color: rgba(0, 100, 200, 0.7);
 }
