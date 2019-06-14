@@ -10,9 +10,9 @@ public class Connect {
 
     public void doConnection() {
 
-        MongoClient mongoclient = MongoClients.create("mongodb+srv://diego:22043321.qaz@clustersomething-jrstw.gcp.mongodb.net/test?retryWrites=true&w=majority");
-        MongoDatabase mdb = mongoclient.getDatabase("test");
-        MongoCollection<Document> collection = mdb.getCollection("newCollection");
+        MongoClient mongoclient = MongoClients.create("mongodb+srv://cs472:123.qaZ@clustersomething-jrstw.gcp.mongodb.net/test?retryWrites=true&w=majority");
+        MongoDatabase mdb = mongoclient.getDatabase("homework07");
+        MongoCollection<Document> collection = mdb.getCollection("mycollection");
 
         Document doc = collection.find().first();
         System.out.println(doc.toJson());
